@@ -6,6 +6,19 @@
   </head>
   <body>
      <div ng-controller="TodoListController as todoList">
-      {{todoList.pai}} 
+        <div ng-repeat = "show in todoList.book">
+          {{show.id}}
+          {{show.name}}
+          {{show.price}}
+          {{show.sumbook}}
+        </div>
+       <div><img src="img/1.jpg"  height="300" width="auto" ng-click="todoList.add(1,'harry 1', 100)"></div>
+       <div><img src="img/2.jpg" height="300" width="auto"  ng-click="todoList.add(2,'harry 2', 100)"></div>
+       <div><img src="img/3.jpg" height="300" width="auto"  ng-click="todoList.add(3,'harry 3', 100)"></div>
+       <div><img src="img/4.jpg" height="300" width="auto"   ng-click="todoList.add(4,'harry 4', 100)"></div>
+       <div><img src="img/5.jpg" height="300" width="auto"  ng-click="todoList.add(5,'harry 5', 100)"></div>
+       <div><img src="img/6.jpg" height="300" width="auto"  ng-click="todoList.add(6,'harry 6', 100)"></div>
+       <div><img src="img/7.jpg" height="300" width="auto"  ng-click="todoList.add(7,'harry 7', 100)"></div>
+
   </body>
 </html>
