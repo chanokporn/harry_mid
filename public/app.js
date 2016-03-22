@@ -2,10 +2,11 @@
 angular.module('todoApp', [])
   .controller('TodoListController', function () {
     var todoList = this
-    todoList.pai = 'test'
+    todoList.test = 'test'
     todoList.book = []
     todoList.add = function (id, name, price) {
       // console.log(id, name, price)
+      console.log(todoList.book)
       var obj = {
         'id': id,
         'name': name,
