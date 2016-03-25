@@ -2,9 +2,9 @@
 angular.module('todoApp', [])
   .controller('TodoListController', function () {
     var todoList = this
-    todoList.test = 'test'
     todoList.book = []
     todoList.discountTotal = 0
+    todoList.sumPriceAll = 0
     todoList.add = function (id, name, price) {
       // console.log(id, name, price)
       var obj = {
@@ -30,10 +30,9 @@ angular.module('todoApp', [])
         obj.sumbook = 1
         todoList.book.push(obj)
       }
-      console.log(todoList.book)
       var book = todoList.book
       todoList.discountTotal = todoList.discount(book)
-      console.log(todoList.discountTotal)
+      todoList.sumPriceAll = todoList.sumPrice()
     }
     var filterData = function (array) {
       return array.filter((element) => element.sumbook !== 0)
@@ -51,7 +50,13 @@ angular.module('todoApp', [])
         })
         items = filterData(items)
       }
-      console.log(totalDis)
       return totalDis
+    }
+    todoList.sumPrice = function () {
+      this.sumPrice2 = 0
+      for (var i = 0; i < todoList.book.length; i++) {
+        this.sumPrice2 += todoList.book[i].price * todoList.book[i].sumbook
+      }
+      return this.sumPrice2
     }
   })

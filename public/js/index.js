@@ -8,12 +8,12 @@ $addQuantity.on('click',function(e){
       $quantityField = $item.find('.quantity_field'),
       currentQuantity = $quantityField.val(),
       nextQuantity = parseFloat(currentQuantity)+1;
-  
+
   $item.find('.current_quantity').html(nextQuantity);
   $quantityField.val(nextQuantity);
-  
-  calculateTotal();
-  
+
+  // calculateTotal();
+
 });
 
 $minusQuantity.on('click',function(e){
@@ -22,18 +22,18 @@ $minusQuantity.on('click',function(e){
       $quantityField = $item.find('.quantity_field'),
       currentQuantity = $quantityField.val();
   var prevQuantity = (currentQuantity <= 1) ? 0 : parseFloat(currentQuantity)-1;
-  
+
   $item.find('.current_quantity').html(prevQuantity);
   $quantityField.val(prevQuantity);
-  
+
   calculateTotal();
-  
+
 });
 
 $removeItem.on('click',function(){
   var $item = $(this).parents('.item');
   $item.remove();
-  
+
   calculateTotal();
 });
 
@@ -42,25 +42,25 @@ var calculateTotal = function(  ) {
   $('.quantity_field').each(function(){
     var quantity = $(this).val(),
         price = $(this).data('price');
-    
+
     newSubTotal += parseFloat(quantity*price);
-    
+
   });
-  
+
   $('.sub-total .amount').html('$'+newSubTotal);
-  
+
   var withTax = newSubTotal*1.05;
 
   var newTotal = withTax+20;
-  
+
   $('.total .amount').html('$'+newTotal);
-  
+
 };
 
 
 /*
  * Image Slide
- * I actually had a lot more fun building this image changer function that I did the rest of the cart I think. It's a pretty straight forward. Please help me improve it if you see any issues. 
+ * I actually had a lot more fun building this image changer function that I did the rest of the cart I think. It's a pretty straight forward. Please help me improve it if you see any issues.
  */
 
 var imageSlide = {
@@ -71,20 +71,20 @@ var imageSlide = {
     imageSlide.$imageList.each(function(){
       $(this).find('li').removeClass('active').eq(0).addClass('active');
     });
-    
+
     imageSlide.$imageList.hover(
       function(){
         imageSlide.$imageList = $(this)
-        imageSlide.start();  
+        imageSlide.start();
       },
       function(){
         imageSlide.stop();
       });
-    
+
   },
-  changeSlide: function(){       
+  changeSlide: function(){
     imageSlide.$imageList.find('li').removeClass('active').eq(imageSlide.currentSlide).addClass('active');
-    
+
     if(imageSlide.currentSlide >= imageSlide.images.length -1) {
       imageSlide.currentSlide = 0;
     }
@@ -104,4 +104,4 @@ var imageSlide = {
 
 imageSlide.init('.images');
 
-calculateTotal();
+// calculateTotal();
