@@ -25,10 +25,11 @@ describe('TEST Buy Harry Potter Book', function () {
     afterEach(function * () {
       yield nightmare.end()
     })
-    it('ซื้อเล่ม 1 จำนวน 2 เล่ม, ซื้อเล่ม 2 จำนวน 1 เล่ม ส่วนลดต้องเท่ากับ 20', function * () {
+    it('ซื้อเล่ม 1 จำนวน 3 เล่ม, ซื้อเล่ม 2 จำนวน 1 เล่ม ส่วนลดต้องเท่ากับ 20', function * () {
       var case1 = yield nightmare
         .goto('http://localhost:5000')
         .wait(2000)
+        .click('#b1')
         .click('#b1')
         .click('#b1')
         .wait(1000)
