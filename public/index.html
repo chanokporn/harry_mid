@@ -242,6 +242,9 @@
     #order-align{
       text-align: center;
     }
+    .grid_4{
+      float:right;
+    }
   </style>
   <script src="js/prefixfree.min.js"></script>
 </head>
@@ -256,20 +259,19 @@
       <ul class="items">
         <li class="grid_4 item">
           <div class="preview">
-            <img src="img/1.jpg" width="250px" height="auto" />
+            <img src="img/3.jpg" width="250px" height="auto" />
           </div>
           <div class="details">
-
             <div class="inner_container">
               <div class="col_1of2">
-                <p> $100 </p>
+                <p>100</p>
               </div>
               <div class="col_1of2 align-right">
                 <p>
-                  <a href="#" ng-click="todoList.add(1,'Harry Potter เล่มที่ 1',100)" class="btn-quantity plus">
+                  <a href="#" ng-click="todoList.add(3,'Harry Potter เล่มที่ 3',100)" class="btn-quantity plus">
                     <span class="icon icon-plus"></span>
                   </a>
-                
+
                 </p>
               </div>
             </div>
@@ -298,7 +300,28 @@
         </li>
         <li class="grid_4 item">
           <div class="preview">
-            <img src="img/3.jpg" width="250px" height="auto" />
+            <img src="img/1.jpg" width="250px" height="auto" />
+          </div>
+          <div class="details">
+
+            <div class="inner_container">
+              <div class="col_1of2">
+                <p> $100 </p>
+              </div>
+              <div class="col_1of2 align-right">
+                <p>
+                  <a href="#" ng-click="todoList.add(1,'Harry Potter เล่มที่ 1',100)" class="btn-quantity plus">
+                    <span class="icon icon-plus"></span>
+                  </a>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="grid_4 item">
+          <div class="preview">
+            <img src="img/6.jpg" width="250px" height="auto" />
           </div>
           <div class="details">
             <div class="inner_container">
@@ -307,7 +330,27 @@
               </div>
               <div class="col_1of2 align-right">
                 <p>
-                  <a href="#" ng-click="todoList.add(3,'Harry Potter เล่มที่ 3',100)" class="btn-quantity plus">
+                  <a href="#" ng-click="todoList.add(6,'Harry Potter เล่มที่ 6',100)" class="btn-quantity plus">
+                    <span class="icon icon-plus"></span>
+                  </a>
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="grid_4 item">
+          <div class="preview">
+            <img src="img/5.jpg" width="250px" height="auto" />
+          </div>
+          <div class="details">
+            <div class="inner_container">
+              <div class="col_1of2">
+                <p>100</p>
+              </div>
+              <div class="col_1of2 align-right">
+                <p>
+                  <a href="#" ng-click="todoList.add(5,'Harry Potter เล่มที่ 5',100)" class="btn-quantity plus">
                     <span class="icon icon-plus"></span>
                   </a>
 
@@ -337,46 +380,7 @@
             </div>
           </div>
         </li>
-        <li class="grid_4 item">
-          <div class="preview">
-            <img src="img/5.jpg" width="250px" height="auto" />
-          </div>
-          <div class="details">
-            <div class="inner_container">
-              <div class="col_1of2">
-                <p>100</p>
-              </div>
-              <div class="col_1of2 align-right">
-                <p>
-                  <a href="#" ng-click="todoList.add(5,'Harry Potter เล่มที่ 5',100)" class="btn-quantity plus">
-                    <span class="icon icon-plus"></span>
-                  </a>
 
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="grid_4 item">
-          <div class="preview">
-            <img src="img/6.jpg" width="250px" height="auto" />
-          </div>
-          <div class="details">
-            <div class="inner_container">
-              <div class="col_1of2">
-                <p>100</p>
-              </div>
-              <div class="col_1of2 align-right">
-                <p>
-                  <a href="#" ng-click="todoList.add(6,'Harry Potter เล่มที่ 6',100)" class="btn-quantity plus">
-                    <span class="icon icon-plus"></span>
-                  </a>
-
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
         <li class="grid_4 item">
           <div class="preview">
             <img src="img/7.jpg" width="250px" height="auto" />
@@ -417,10 +421,10 @@
               </table>
 
             </div>
-            <div class="shipping">
+            <div class="shipping" style="padding-left:25px">
               <em>Sum of price: </em><span class="amount">{{todoList.sumPriceAll}}</span>
             </div>
-            <div class="taxes">
+            <div class="taxes" style="padding-left:25px">
               <em>discount: </em><span class="amount">{{todoList.discountTotal}}</span>
             </div>
 
