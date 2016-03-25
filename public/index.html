@@ -48,7 +48,7 @@
     }
 
     html {
-      background: #f5f5f5;
+      background: #18BC9C;
       font-family: 'Open Sans', sans;
     }
 
@@ -246,17 +246,72 @@
     .grid_4 {
       float: right;
     }
+
+
+
+
+
+/* navbar */
+.navbar {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  background-color: #2C3E50;
+}
+
+.logo,
+.nav {
+  display: inline-block;
+  margin: 0;
+}
+
+/* nav links */
+.nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.navbar a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #DDD;
+}
+
+/* if you want pull right nav links */
+.nav-right {
+  float: right;
+  line-height: 39px;
+}
+
+
   </style>
   <script src="js/prefixfree.min.js"></script>
 </head>
 
 <body ng-controller="TodoListController as todoList">
-  {{todoList.test}}
+  <nav class="navbar">
+
+  <div class="container">
+
+    <h1 class="logo"><a href="#">BAN NAI JIN BOOKS</a></h1>
+    <ul class="nav nav-right">
+
+    </ul>
+  </div><!--/.container-->
+
+</nav><!--/.navbar-->
   <div class="cart">
     <div class="container">
-      <div class="grid_12">
-        <h1>Harry Potter</h1>
-      </div>
       <ul class="items">
         <li class="grid_4 item">
           <div class="preview">
@@ -408,9 +463,9 @@
 
               <table id="order-align">
                 <tr>
-                  <td width="200px">Order</td>
-                  <td width="100px">Amount</td>
-                  <td width="100px">Price</td>
+                  <th width="200px">Order</th>
+                  <th width="100px">Amount</th>
+                  <th width="100px">Price</th>
                 </tr>
                 <tr ng-repeat="show in todoList.book">
                   <td>{{show.name}}</td>
