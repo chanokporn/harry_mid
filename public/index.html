@@ -394,14 +394,13 @@ html {
           <div class="sub-total">
 
             <table >
-              <tr><td>Order</td><td>Amount</td></tr>
-              <tr ng-repeat = "show in todoList.book"><td>{{show.name}}</td><td>{{show.sumbook}}</td></tr>
+              <tr><td>Order</td><td>Amount</td><td>Price</td></tr>
+              <tr ng-repeat = "show in todoList.book"><td>{{show.name}}</td><td>{{show.sumbook}}</td><td>{{show.price*show.sumbook}}</td></tr>
             </table>
-            <em>Sub Total: </em><span></span>
-            <em>Sub Total: </em><span></span>
+
           </div>
           <div class="taxes">
-            <em>Sales Tax: </em><span class="amount">5%</span>
+            <em>discount: </em><span class="amount">{{todoList.discountTotal}}</span>
           </div>
           <div class="shipping">
             <em>Shipping: </em><span class="amount">$20</span>
