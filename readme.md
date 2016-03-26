@@ -1,14 +1,14 @@
 ##How to install
 ```
-$ sudo npm install
+$ npm install
 ```
 ##How to start server
 ```
-$ sudo npm start
+$ npm start
 ```
 ##How to test
 ```
-$ sudo npm test
+$ npm test
 ```
 ##Open Heroku
 ```
