@@ -12,5 +12,5 @@ $ npm test
 ```
 ##Open Heroku
 ```
-http://serene-taiga-36639.herokuapp.com/
+http://harrypotter-pai.herokuapp.com/
 ```
