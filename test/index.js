@@ -58,7 +58,7 @@ describe('TEST Buy Harry Potter Book', function () {
         })
       case2.should.equal('60')
     })
-    it('ซื้อเล่ม 3 จำนวน 4 เล่ม, ซื้อเล่ม 4 จำนวน 4 เล่ม, ซื้อเล่ม 5 จำนวน 5 ส่วนลดต้องเท่ากับ 240', function * () {
+    it('ซื้อเล่ม 3 จำนวน 4 เล่ม, ซื้อเล่ม 4 จำนวน 4 เล่ม, ซื้อเล่ม 5 จำนวน 5 เล่ม  ส่วนลดต้องเท่ากับ 240', function * () {
       var case3 = yield nightmare
         .goto('http://localhost:5000')
         .wait(2000)
@@ -108,6 +108,96 @@ describe('TEST Buy Harry Potter Book', function () {
           return this.price
         })
       case4.should.equal('300')
+    })
+    it('ซื้อเล่ม 4 จำนวน 2 เล่ม, ซื้อเล่ม 5 จำนวน 2 เล่ม, ซื้อเล่ม 6 จำนวน 3 เล่ม, ซื้อเล่ม 7 จำนวน 3 เล่ม , ซื้อเล่ม 1 จำนวน 1 เล่ม ส่วนลดต้องเท่ากับ 340', function * () {
+      var case4 = yield nightmare
+        .goto('http://localhost:5000')
+        .wait(2000)
+        .click('#b4')
+        .click('#b4')
+        .wait(1000)
+        .click('#b5')
+        .click('#b5')
+        .wait(1000)
+        .click('#b6')
+        .click('#b6')
+        .click('#b6')
+        .wait(1000)
+        .click('#b7')
+        .click('#b7')
+        .click('#b7')
+        .wait(1000)
+        .click('#b1')
+        .evaluate(function () {
+          this.price = document.querySelector('#discountTotal').innerHTML
+          return this.price
+        })
+      case4.should.equal('340')
+    })
+    it('ซื้อเล่ม 7 จำนวน 3 เล่ม, ซื้อเล่ม 5 จำนวน 2 เล่ม, ซื้อเล่ม 1 จำนวน 4 เล่ม, ซื้อเล่ม 4 จำนวน 1 เล่ม , ซื้อเล่ม 3 จำนวน 5 เล่ม , ซื้อเล่ม 2 จำนวน 1 เล่ม ส่วนลดต้องเท่ากับ 500', function * () {
+      var case4 = yield nightmare
+        .goto('http://localhost:5000')
+        .wait(2000)
+        .click('#b7')
+        .click('#b7')
+        .click('#b7')
+        .wait(1000)
+        .click('#b5')
+        .click('#b5')
+        .wait(1000)
+        .click('#b1')
+        .click('#b1')
+        .click('#b1')
+        .click('#b1')
+        .wait(1000)
+        .click('#b4')
+        .wait(1000)
+        .click('#b3')
+        .click('#b3')
+        .click('#b3')
+        .click('#b3')
+        .click('#b3')
+        .wait(1000)
+        .click('#b2')
+        .evaluate(function () {
+          this.price = document.querySelector('#discountTotal').innerHTML
+          return this.price
+        })
+      case4.should.equal('500')
+    })
+    it('ซื้อเล่ม 6 จำนวน 5 เล่ม, ซื้อเล่ม 7 จำนวน 1 เล่ม, ซื้อเล่ม 4 จำนวน 4 เล่ม, ซื้อเล่ม 3 จำนวน 3 เล่ม , ซื้อเล่ม 2 จำนวน 2 เล่ม , ซื้อเล่ม 1 จำนวน 1 เล่ม , ซื้อเล่ม 5 จำนวน 2 เล่ม ส่วนลดต้องเท่ากับ 700', function * () {
+      var case4 = yield nightmare
+        .goto('http://localhost:5000')
+        .wait(2000)
+        .click('#b6')
+        .click('#b6')
+        .click('#b6')
+        .click('#b6')
+        .click('#b6')
+        .wait(1000)
+        .click('#b7')
+        .wait(1000)
+        .click('#b4')
+        .click('#b4')
+        .click('#b4')
+        .click('#b4')
+        .wait(1000)
+        .click('#b3')
+        .click('#b3')
+        .click('#b3')
+        .wait(1000)
+        .click('#b2')
+        .click('#b2')
+        .wait(1000)
+        .click('#b1')
+        .wait(1000)
+        .click('#b5')
+        .click('#b5')
+        .evaluate(function () {
+          this.price = document.querySelector('#discountTotal').innerHTML
+          return this.price
+        })
+      case4.should.equal('700')
     })
   })
 })
